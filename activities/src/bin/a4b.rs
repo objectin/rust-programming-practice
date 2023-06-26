@@ -10,4 +10,23 @@
 // * Use a match expression to determine which message to display
 // * Use an underscore (_) to match on any value
 
-fn main() {}
+use std::io;
+
+fn main() {
+    // Get int input
+    let mut input = String::new();
+    print!("Enter an integer: ");
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Failed to read line");
+
+    let num: i32 = input.trim().parse().expect("Invalid input");
+    let output = match num {
+        1 => "one",
+        2 => "two",
+        3 => "three",
+        _ => "other",
+    };
+
+    println!("{}", output);
+}
