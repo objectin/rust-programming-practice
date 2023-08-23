@@ -12,4 +12,21 @@
 // * Use a match expression to determine which message
 //   to print
 
-fn main() {}
+fn print_msg(state: bool) {
+    if state {
+        println!("its big");
+    } else {
+        println!("its small");
+    }
+}
+
+fn main() {
+    let n = 100;
+    let state = if n > 100 {
+        true
+    } else {
+        false
+    };
+    print_msg(state);
+    print_msg(state);
+}
